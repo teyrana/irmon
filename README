@@ -1,10 +1,6 @@
 
 
 
-
-
-
-
 ## derived from:
 https://github.com/raspberrypi/pico-examples/tree/master/pio/ir_nec/ir_loopback
 
@@ -16,3 +12,33 @@ https://github.com/raspberrypi/pico-examples/tree/master/pio/ir_nec/ir_loopback
 ## Platformio
 
 (currently broken)
+
+
+
+# Reference: 
+
+
+
+
+## Build
+
+Simply run `make build` from the repo root
+
+
+## Upload Code
+
+1. (make require reboot/reset)
+    `make reset` 
+    - may require updating the USB device addr in the makefile
+2. `make upload`
+
+## Read Debug Output
+
+1. Verify device is present:
+    ```
+    lsusb | grep Pico
+    ```
+
+2. run `make mon`
+
+

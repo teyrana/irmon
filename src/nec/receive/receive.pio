@@ -46,6 +46,8 @@ data_bit:
 
 
 % c-sdk {
+#include "hardware/clocks.h"
+
 static inline void nec_receive_program_init (PIO pio, uint sm, uint offset, uint pin) {
 
     // Set the GPIO function of the pin (connect the PIO to the pad)
@@ -55,11 +57,9 @@ static inline void nec_receive_program_init (PIO pio, uint sm, uint offset, uint
     pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, false);
 
     // Create a new state machine configuration
-    //
     pio_sm_config c = nec_receive_program_get_default_config (offset);
 
     // configure the Input Shift Register
-    //
     sm_config_set_in_shift (&c,
                             true,       // shift right
                             true,       // enable autopush

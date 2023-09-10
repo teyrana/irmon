@@ -9,10 +9,10 @@
 #include "hardware/pio.h"
 #include "hardware/clocks.h"    // for clock_get_hz()
 
-#include "nec_receive.h"
+#include "receive.h"
 
 // import the assembled PIO state machine program
-#include "nec_receive.pio.h"
+#include "receive.pio.h"
 
 // Claim an unused state machine on the specified PIO and configure it
 // to receive NEC IR frames on the given GPIO pin.
